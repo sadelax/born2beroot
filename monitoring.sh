@@ -17,9 +17,9 @@ MAC_ADRESS=$(ip a | grep 'ether' | awk '{print $2}')
 SUDO_COUNT=$(grep 'COMMAND' /var/log/sudo/sudo.log | wc -l)
 
 wall "  
-        echo "********************************************************************"
-        echo "                      Server Information                             "
-        echo "********************************************************************"
+        ********************************************************************
+                              Server Information                             
+        ********************************************************************
         #Architecture: $ARCH
         #CPU physical: $CORE
         #vCPU: $VCORE
