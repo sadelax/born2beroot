@@ -16,7 +16,11 @@ IPV4_COUNT=$(hostname -I)
 MAC_ADRESS=$(ip a | grep 'ether' | awk '{print $2}')
 SUDO_COUNT=$(grep 'COMMAND' /var/log/sudo/sudo.log | wc -l)
 
-wall "#Architecture: $ARCH
+wall "  
+        echo "********************************************************************"
+        echo "                      Server Information                             "
+        echo "********************************************************************"
+        #Architecture: $ARCH
         #CPU physical: $CORE
         #vCPU: $VCORE
         #Memory Usage: ${RAM}MB (${RAM_PERC}%)
