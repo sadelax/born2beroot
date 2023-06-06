@@ -1,23 +1,6 @@
 # born2beroot
 script that gives you some information about your machine.
 
-ARCH=$(uname -a)
-CORE=$(grep 'physical id' /proc/cpuinfo | wc -l)
-VCORE=$(grep 'processor' /proc/cpuinfo | wc -l)
-RAM=$(free -m | grep 'Mem:' | awk '{print $3 "/" $2}')
-RAM_PERC=$(free -m | grep 'Mem:' | awk '{printf ("%.2f", $3/$2*100)}')
-MEM_ACTU=$(df -BM --total | grep 'total' | tr -d "M" | awk '{print $3}')
-MEM_TOTA=$(df -BG --total | grep 'total' | awk '{print $2}')
-MEM_PERC=$(df -BM --total | grep 'total' | awk '{print $5}')
-CORE_PERC=$(top -bn1 | grep '%Cpu' | awk '{printf("%.1f", $2+$4)}')
-LAST_BOOT=$(who -b | cut -c23-)
-LVM_USE=$(if [ $(lsblk | grep 'lvm' | wc -l) -gt 0 ]; then echo yes; else echo no; fi)
-NUM_TCP=$(grep 'TCP' /proc/net/sockstat | awk '{print($3)}')
-USER_COUNT=$(users | wc -w)
-IPV4_COUNT=$(hostname -I)
-MAC_ADRESS=$(ip a | grep 'ether' | awk '{print $2}')
-SUDO_COUNT=$(grep 'COMMAND' /var/log/sudo/sudo.log | wc -l)
-
 ### architecture `uname -a`
 para poder ver la arquitectura del SO y su versión de kernel. imprime la info excepto si el tipo de procesador ó el tipo de hardware son desconocidos.
 ### núcleos físicos `grep 'physical id' /proc/cpuinfo | wc -l`
