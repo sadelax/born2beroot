@@ -1,4 +1,4 @@
-# born2beroot
+# Born to be root
 script que provee info sobre tu ordenador llamado monitoring.sh. en el subject se pide que este script se ejecute cada 10 minutos, por lo que especificaremos con un administrador de tareas de Linux (`cron`) la ruta de monitoring.sh.
 ## explicación de los comandos
 ### architecture `uname -a`
